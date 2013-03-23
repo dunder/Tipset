@@ -1,24 +1,14 @@
-using System;
-using System.Linq;
-using System.Configuration;
-using System.Collections.Generic;
 using System.Web.Mvc;
-using ServiceStack.Configuration;
-using ServiceStack.CacheAccess;
-using ServiceStack.CacheAccess.Providers;
 using ServiceStack.Mvc;
-using ServiceStack.OrmLite;
-using ServiceStack.ServiceInterface;
 using ServiceStack.ServiceInterface.Auth;
-using ServiceStack.ServiceInterface.ServiceModel;
 using ServiceStack.WebHost.Endpoints;
-using Raven.Client.Document;
 using Raven.Client;
 using Funq;
 using Raven.Database.Server;
 using Raven.Client.Embedded;
 using RavenDb.Repository;
 using RavenDb.Services;
+using Tipset.Domain;
 using Tipset.WebApi.Dto;
 
 [assembly: WebActivator.PreApplicationStartMethod(typeof(RavenDb.App_Start.AppHost), "Start")]
@@ -47,7 +37,7 @@ namespace RavenDb.App_Start
 		public AppHost() //Tell ServiceStack the name and where to find your web services
 			: base("StarterTemplate ASP.NET Host", typeof(HelloService).Assembly) { }
 
-		public override void Configure(Funq.Container container)
+		public override void Configure(Container container)
 		{
 			//Set JSON web services to return idiomatic JSON camelCase properties
 			ServiceStack.Text.JsConfig.EmitCamelCaseNames = true;
@@ -66,13 +56,13 @@ namespace RavenDb.App_Start
 
             container.Register(CreateDocumentStore());
             container.Register(c => c.Resolve<IDocumentStore>().OpenSession()).ReusedWithin(ReuseScope.Request);
-			container.Register(new TodoRepository());			
-
+			container.Register(new TodoRepository());
+		    container.Register<ISeasonFactory>(c => new SeasonFactory());
 			//Set MVC to use the same Funq IOC as ServiceStack
 			ControllerBuilder.Current.SetControllerFactory(new FunqControllerFactory(container));
 		}
 
-        private IDocumentStore CreateDocumentStore() 
+        private static IDocumentStore CreateDocumentStore() 
         {
             var store = new EmbeddableDocumentStore
             {

@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
-using Raven.Client.Embedded;
-using Raven.Database.Server;
-using Raven.Client.Document;
 using RavenDb.DataAccess;
-using ServiceStack.WebHost.Endpoints;
-using Funq;
 
 namespace RavenDb
 {

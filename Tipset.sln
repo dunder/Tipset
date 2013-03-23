@@ -5,11 +5,31 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tipset.WebApi", "Tipset.Web
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tipset.Domain", "Tipset.Domain\Tipset.Domain.csproj", "{845930A7-0F83-44FC-8947-4AB4F941EDF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tipset.Console", "Tipset.Console\Tipset.Console.csproj", "{FD3422FC-5F6C-4291-A894-ACE29AF9F181}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tipset.AdminConsole", "Tipset.AdminConsole\Tipset.AdminConsole.csproj", "{FD3422FC-5F6C-4291-A894-ACE29AF9F181}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tipset.Api.Dto", "Tipset.Api.Dto\Tipset.Api.Dto.csproj", "{BCD10A15-1543-4074-9FF5-0FD7C1AF46E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tipset.UserStories", "Tipset.UserStories\Tipset.UserStories.csproj", "{29243AD3-0D99-4FE4-9452-A871B8E8A72F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{30866CC6-11DB-46A9-AD42-F4FB2CA2CC0B}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		Tipset.vsmdi = Tipset.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tipset.Domain.UnitTest", "Tipset.Domain.UnitTest\Tipset.Domain.UnitTest.csproj", "{AFA2A000-3664-4E21-A755-E359C90E7EF8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{A77C673C-D268-4CA1-B431-D972168AAE6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tipset.AdminConsole.UnitTests", "Tipset.AdminConsole.UnitTests\Tipset.AdminConsole.UnitTests.csproj", "{3F9E202E-D080-4C60-9B9B-E53AF7A02D6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tipset.Common", "Tipset.Common\Tipset.Common.csproj", "{51B77784-1DB6-42A8-B7A1-2CF0A32890D3}"
+EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Tipset.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -59,8 +79,51 @@ Global
 		{BCD10A15-1543-4074-9FF5-0FD7C1AF46E8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{BCD10A15-1543-4074-9FF5-0FD7C1AF46E8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{BCD10A15-1543-4074-9FF5-0FD7C1AF46E8}.Release|x86.ActiveCfg = Release|Any CPU
+		{29243AD3-0D99-4FE4-9452-A871B8E8A72F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29243AD3-0D99-4FE4-9452-A871B8E8A72F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29243AD3-0D99-4FE4-9452-A871B8E8A72F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{29243AD3-0D99-4FE4-9452-A871B8E8A72F}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{29243AD3-0D99-4FE4-9452-A871B8E8A72F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{29243AD3-0D99-4FE4-9452-A871B8E8A72F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29243AD3-0D99-4FE4-9452-A871B8E8A72F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29243AD3-0D99-4FE4-9452-A871B8E8A72F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{29243AD3-0D99-4FE4-9452-A871B8E8A72F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{29243AD3-0D99-4FE4-9452-A871B8E8A72F}.Release|x86.ActiveCfg = Release|Any CPU
+		{AFA2A000-3664-4E21-A755-E359C90E7EF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFA2A000-3664-4E21-A755-E359C90E7EF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFA2A000-3664-4E21-A755-E359C90E7EF8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{AFA2A000-3664-4E21-A755-E359C90E7EF8}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{AFA2A000-3664-4E21-A755-E359C90E7EF8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AFA2A000-3664-4E21-A755-E359C90E7EF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFA2A000-3664-4E21-A755-E359C90E7EF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFA2A000-3664-4E21-A755-E359C90E7EF8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{AFA2A000-3664-4E21-A755-E359C90E7EF8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{AFA2A000-3664-4E21-A755-E359C90E7EF8}.Release|x86.ActiveCfg = Release|Any CPU
+		{3F9E202E-D080-4C60-9B9B-E53AF7A02D6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F9E202E-D080-4C60-9B9B-E53AF7A02D6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F9E202E-D080-4C60-9B9B-E53AF7A02D6C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3F9E202E-D080-4C60-9B9B-E53AF7A02D6C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3F9E202E-D080-4C60-9B9B-E53AF7A02D6C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3F9E202E-D080-4C60-9B9B-E53AF7A02D6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F9E202E-D080-4C60-9B9B-E53AF7A02D6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F9E202E-D080-4C60-9B9B-E53AF7A02D6C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3F9E202E-D080-4C60-9B9B-E53AF7A02D6C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3F9E202E-D080-4C60-9B9B-E53AF7A02D6C}.Release|x86.ActiveCfg = Release|Any CPU
+		{51B77784-1DB6-42A8-B7A1-2CF0A32890D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51B77784-1DB6-42A8-B7A1-2CF0A32890D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51B77784-1DB6-42A8-B7A1-2CF0A32890D3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{51B77784-1DB6-42A8-B7A1-2CF0A32890D3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{51B77784-1DB6-42A8-B7A1-2CF0A32890D3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{51B77784-1DB6-42A8-B7A1-2CF0A32890D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51B77784-1DB6-42A8-B7A1-2CF0A32890D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51B77784-1DB6-42A8-B7A1-2CF0A32890D3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{51B77784-1DB6-42A8-B7A1-2CF0A32890D3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{51B77784-1DB6-42A8-B7A1-2CF0A32890D3}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3F9E202E-D080-4C60-9B9B-E53AF7A02D6C} = {A77C673C-D268-4CA1-B431-D972168AAE6A}
 	EndGlobalSection
 EndGlobal

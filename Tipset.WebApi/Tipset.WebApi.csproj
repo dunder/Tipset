@@ -130,6 +130,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\RavenRepository.cs" />
     <Compile Include="Repository\TodoRepository.cs" />
     <Compile Include="Services\HelloService.cs" />
     <Compile Include="Services\PlayerService.cs" />

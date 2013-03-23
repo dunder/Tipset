@@ -1,0 +1,8 @@
+﻿CommandLine 1.9.71-stable
+Copyright (c) 2005 - 2013 Giacomo Stelluti Scala
+
+  --create-season    Creates a new season starting at yyyy-MM-dd and ending at 
+                     yyyy-MM-dd
+
+  --help             Display this help screen.
+

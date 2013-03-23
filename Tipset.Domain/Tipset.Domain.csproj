@@ -40,11 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IModel.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="ISeasonFactory.cs" />
+    <Compile Include="ISeasonRepository.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Result.cs" />
     <Compile Include="Round.cs" />
     <Compile Include="Season.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeasonFactory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
