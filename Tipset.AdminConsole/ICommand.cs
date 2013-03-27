@@ -1,6 +1,6 @@
 ﻿namespace Tipset.AdminConsole
 {
-    interface ICommand
+    public interface ICommand
     {
         void Execute(CommandLineOptions options);
     }

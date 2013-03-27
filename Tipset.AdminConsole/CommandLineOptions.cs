@@ -5,7 +5,7 @@ using CommandLine.Text;
 namespace Tipset.AdminConsole
 {
     //https://github.com/gsscoder/commandline/wiki/Verb-Commands
-    class CommandLineOptions
+    public class CommandLineOptions
     {
         [VerbOption("create-season", HelpText = "Creates a new season starting at yyyy-MM-dd and ending at yyyy-MM-dd")]
         public CreateSeasonSubOptions CreateSeasonSubVerb { get; set; }
@@ -23,12 +23,12 @@ namespace Tipset.AdminConsole
         }
     }
 
-    class CreateSeasonSubOptions
+    public class CreateSeasonSubOptions
     {
-        [Option("start", Required = true, HelpText = "Season start date (yyyy-mm-dd")]
+        [Option("start", Required = true, HelpText = "Season start date (yyyy-MM-dd)")]
         public string Start { get; set; }
         
-        [Option("end", Required = true, HelpText = "Season end date (yyyy-mm-dd")]
+        [Option("end", Required = true, HelpText = "Season end date (yyyy-MM-dd)")]
         public string End { get; set; }
         
     }

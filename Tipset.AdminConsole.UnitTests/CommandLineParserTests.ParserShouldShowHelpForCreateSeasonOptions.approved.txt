@@ -1,0 +1,7 @@
+﻿CommandLine 1.9.71-stable
+Copyright (c) 2005 - 2013 Giacomo Stelluti Scala
+
+  --start    Required. Season start date (yyyy-MM-dd)
+
+  --end      Required. Season end date (yyyy-MM-dd)
+

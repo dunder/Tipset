@@ -78,8 +78,9 @@ namespace Tipset.UserStories
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7
- testRunner.When("I create a new season starting at 2012-08-18 and ending at 2013-05-18 with 4 play" +
-                    "ers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("4 players", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 8
+ testRunner.When("I create a new season starting at 2012-08-18 and ending at 2013-05-18", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Date",
@@ -204,7 +205,7 @@ this.ScenarioSetup(scenarioInfo);
             table1.AddRow(new string[] {
                         "2013-05-18",
                         "4"});
-#line 8
+#line 9
  testRunner.Then("the created season should have the following rounds", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -216,9 +217,9 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void CreateSeasonWhenNumberOfWeeksAndPlayersDoesNotEvensUp()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create season when number of weeks and players does not evens up", ((string[])(null)));
-#line 51
-this.ScenarioSetup(scenarioInfo);
 #line 52
+this.ScenarioSetup(scenarioInfo);
+#line 53
  testRunner.When("I create a new season starting at 2012-08-18 and ending at 2013-05-11 with 4 play" +
                     "ers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -342,7 +343,7 @@ this.ScenarioSetup(scenarioInfo);
             table2.AddRow(new string[] {
                         "2013-05-11",
                         "3,4"});
-#line 53
+#line 54
  testRunner.Then("the created season should have the following rounds", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();

@@ -4,7 +4,8 @@
 	I want to be able to create a new season
 
 Scenario: Create season when number of weeks and players evens up
-	When I create a new season starting at 2012-08-18 and ending at 2013-05-18 with 4 players
+	Given 4 players
+	When I create a new season starting at 2012-08-18 and ending at 2013-05-18
 	Then the created season should have the following rounds
 	| Date       | Players |
 	| 2012-08-18 | 1       |

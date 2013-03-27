@@ -44,10 +44,11 @@ namespace Tipset.AdminConsole.UnitTests
         }
 
         [TestMethod]
-        [UseReporter(typeof(ClipboardReporter))]
+        [UseReporter(typeof(DiffReporter))]
         public void ParserShouldShowHelpForCreateSeasonOptions()
         {
             var options = new CommandLineOptions();
+            options.CreateSeasonSubVerb = new CreateSeasonSubOptions();
 
             Approvals.Verify(options.GetUsage("create-season"));
         }
