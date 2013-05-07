@@ -72,15 +72,25 @@ namespace Tipset.UserStories
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
         [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create season when number of weeks and players evens up")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "US001 New season")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ravendb")]
         public virtual void CreateSeasonWhenNumberOfWeeksAndPlayersEvensUp()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create season when number of weeks and players evens up", ((string[])(null)));
-#line 6
-this.ScenarioSetup(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create season when number of weeks and players evens up", new string[] {
+                        "ravendb"});
 #line 7
- testRunner.Given("4 players", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 8
+ testRunner.Given("4 players", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 9
  testRunner.When("I create a new season starting at 2012-08-18 and ending at 2013-05-18", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 10
+ testRunner.Then("the created season should have 40 rounds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 11
+ testRunner.And("there should be one round for every saturday between the start and end date", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 12
+ testRunner.And("each round should should have 1 player assigned", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 13
+ testRunner.And("each player should be assigned to every fourth round ordered by player name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Date",
@@ -205,21 +215,23 @@ this.ScenarioSetup(scenarioInfo);
             table1.AddRow(new string[] {
                         "2013-05-18",
                         "4"});
-#line 9
+#line 14
  testRunner.Then("the created season should have the following rounds", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create season when number of weeks and players does not evens up")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Create season when number of weeks and players does not even up")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "US001 New season")]
-        public virtual void CreateSeasonWhenNumberOfWeeksAndPlayersDoesNotEvensUp()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("ravendb")]
+        public virtual void CreateSeasonWhenNumberOfWeeksAndPlayersDoesNotEvenUp()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create season when number of weeks and players does not evens up", ((string[])(null)));
-#line 52
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create season when number of weeks and players does not even up", new string[] {
+                        "ravendb"});
+#line 58
 this.ScenarioSetup(scenarioInfo);
-#line 53
+#line 59
  testRunner.When("I create a new season starting at 2012-08-18 and ending at 2013-05-11 with 4 play" +
                     "ers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -343,7 +355,7 @@ this.ScenarioSetup(scenarioInfo);
             table2.AddRow(new string[] {
                         "2013-05-11",
                         "3,4"});
-#line 54
+#line 60
  testRunner.Then("the created season should have the following rounds", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();

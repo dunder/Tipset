@@ -4,5 +4,7 @@ Copyright (c) 2005 - 2013 Giacomo Stelluti Scala
   --create-season    Creates a new season starting at yyyy-MM-dd and ending at 
                      yyyy-MM-dd
 
+  --create-player    Creates a new player with a given name and email address
+
   --help             Display this help screen.
 

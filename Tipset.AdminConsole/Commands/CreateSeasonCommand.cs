@@ -35,12 +35,12 @@ namespace Tipset.AdminConsole.Commands
                 Start = startDate,
                 End = endDate,
                 PlayerIds = new List<string>
-                                                                  {
-                                                                      "players/1",
-                                                                      "players/2",
-                                                                      "players/3",
-                                                                      "players/4"
-                                                                  }
+                    {
+                        "players/1",
+                        "players/2",
+                        "players/3",
+                        "players/4"
+                    }
             });
             Log.Info("Season created: " + response.Id);
         }

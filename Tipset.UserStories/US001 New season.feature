@@ -3,9 +3,14 @@
 	As an Administrator
 	I want to be able to create a new season
 
+@ravendb
 Scenario: Create season when number of weeks and players evens up
 	Given 4 players
 	When I create a new season starting at 2012-08-18 and ending at 2013-05-18
+	Then the created season should have 40 rounds
+	And there should be one round for every saturday between the start and end date
+	And each round should should have 1 player assigned
+	And each player should be assigned to every fourth round ordered by player name
 	Then the created season should have the following rounds
 	| Date       | Players |
 	| 2012-08-18 | 1       |
@@ -49,7 +54,8 @@ Scenario: Create season when number of weeks and players evens up
 	| 2013-05-11 | 3       |
 	| 2013-05-18 | 4       |
 
-Scenario: Create season when number of weeks and players does not evens up
+@ravendb
+Scenario: Create season when number of weeks and players does not even up
 	When I create a new season starting at 2012-08-18 and ending at 2013-05-11 with 4 players
 	Then the created season should have the following rounds
 	| Date       | Players |

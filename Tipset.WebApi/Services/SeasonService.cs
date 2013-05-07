@@ -15,12 +15,15 @@ namespace RavenDb.Services
         {
             using (var session = DocumentStore.OpenSession())
             {
+                // ladda alla     
+                var players = from player in session.Query<Player>()
+                              orderby player.Name
+                              select player;    
+
                 var entity = SeasonFactory.Create(season.Name,
                     season.Start, 
                     season.End,
-                    season.PlayerIds
-                          .Select(id => new Player {Id = id})
-                          .ToList());
+                    players.ToList());
 
                 session.Store(entity);
                 session.SaveChanges();

@@ -1,4 +1,5 @@
 using System.Web.Mvc;
+using RavenDb.Config;
 using ServiceStack.Mvc;
 using ServiceStack.ServiceInterface.Auth;
 using ServiceStack.WebHost.Endpoints;
@@ -33,19 +34,17 @@ namespace RavenDb.App_Start
 	}
 
 	public class AppHost : AppHostBase
-	{		
-		public AppHost() //Tell ServiceStack the name and where to find your web services
-			: base("StarterTemplate ASP.NET Host", typeof(HelloService).Assembly) { }
+	{
+        //Tell ServiceStack the name and where to find your web services
+		public AppHost() : base("StarterTemplate ASP.NET Host", typeof(HelloService).Assembly) { }
 
 		public override void Configure(Container container)
 		{
 			//Set JSON web services to return idiomatic JSON camelCase properties
 			ServiceStack.Text.JsConfig.EmitCamelCaseNames = true;
 		
-			//Configure User Defined REST Paths
-			Routes
-			  .Add<Hello>("/hello")
-			  .Add<Hello>("/hello/{Name*}");
+			Routes.Add<Hello>("/hello")
+			      .Add<Hello>("/hello/{Name*}");
 
 			//Uncomment to change the default ServiceStack configuration
 			//SetConfig(new EndpointHostConfig {
@@ -54,25 +53,27 @@ namespace RavenDb.App_Start
 			//Enable Authentication
 			//ConfigureAuth(container);
 
-            container.Register(CreateDocumentStore());
+
+            container.Register<IConfiguration>(c => new ConfigurationManagerConfiguration());
+            container.Register(CreateDocumentStore(container.Resolve<IConfiguration>()));
             container.Register(c => c.Resolve<IDocumentStore>().OpenSession()).ReusedWithin(ReuseScope.Request);
 			container.Register(new TodoRepository());
 		    container.Register<ISeasonFactory>(c => new SeasonFactory());
+
 			//Set MVC to use the same Funq IOC as ServiceStack
 			ControllerBuilder.Current.SetControllerFactory(new FunqControllerFactory(container));
 		}
 
-        private static IDocumentStore CreateDocumentStore() 
+        private static IDocumentStore CreateDocumentStore(IConfiguration configuration)
         {
             var store = new EmbeddableDocumentStore
             {
                 ConnectionStringName = "RavenDB",
                 UseEmbeddedHttpServer = true,
-                Configuration = { Port = 62281 }
             };
 
             store.Conventions.IdentityPartsSeparator = "-";
-            NonAdminHttp.EnsureCanListenToWhenInNonAdminContext(62281);
+            NonAdminHttp.EnsureCanListenToWhenInNonAdminContext(configuration.GetInt(RavenSettings.Port));
 
             store.Initialize();
 

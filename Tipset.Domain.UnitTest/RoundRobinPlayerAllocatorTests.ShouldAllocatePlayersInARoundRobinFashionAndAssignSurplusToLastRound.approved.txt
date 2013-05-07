@@ -1,0 +1,5 @@
+﻿round[0] = Date: 2013-05-01, Assigned player ID:s: 1
+round[1] = Date: 2013-05-02, Assigned player ID:s: 2
+round[2] = Date: 2013-05-03, Assigned player ID:s: 3
+round[3] = Date: 2013-05-04, Assigned player ID:s: 1
+round[4] = Date: 2013-05-05, Assigned player ID:s: 2,3

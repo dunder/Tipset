@@ -10,6 +10,9 @@ namespace Tipset.AdminConsole
         [VerbOption("create-season", HelpText = "Creates a new season starting at yyyy-MM-dd and ending at yyyy-MM-dd")]
         public CreateSeasonSubOptions CreateSeasonSubVerb { get; set; }
 
+        [VerbOption("create-player", HelpText = "Creates a new player with a given name and email address")]
+        public CreatePlayerSubOptions CreatePlayerSubVerb { get; set; }
+
         [HelpOption]
         public string GetUsage()
         {
@@ -30,6 +33,15 @@ namespace Tipset.AdminConsole
         
         [Option("end", Required = true, HelpText = "Season end date (yyyy-MM-dd)")]
         public string End { get; set; }
+    }
+
+    public class CreatePlayerSubOptions
+    {
+        [Option("name", Required = true, HelpText = "Player name e.g. 'Matias'")]
+        public string Name { get; set; }
         
+        [Option("email", Required = true, HelpText = "Player email e.g. 'firstname.lastname@test.com'")]
+        public string Email { get; set; }
+
     }
 }

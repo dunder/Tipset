@@ -1,0 +1,12 @@
+﻿CommandLine 1.9.71-stable
+Copyright (c) 2005 - 2013 Giacomo Stelluti Scala
+
+  --create-season    yyyy-MM-dd
+
+  --create-player    
+
+  --help             
+
+  --help             
+
+

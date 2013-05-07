@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using Raven.Client;
 using Raven.Client.Embedded;
 using Raven.Database.Server;
@@ -27,10 +28,10 @@ namespace RavenDb.DataAccess
             {
                 ConnectionStringName = "RavenDB",
                 UseEmbeddedHttpServer = true,
-                Configuration = { Port = 62281 }
+                // Configuration = { Port = 62281 }
             };
             instance.Conventions.IdentityPartsSeparator = "-";
-            NonAdminHttp.EnsureCanListenToWhenInNonAdminContext(62281);
+            NonAdminHttp.EnsureCanListenToWhenInNonAdminContext(Convert.ToInt32(ConfigurationManager.AppSettings["Raven/Port"]));
             
             instance.Initialize();
             return instance;

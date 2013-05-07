@@ -118,6 +118,9 @@
   <ItemGroup>
     <Compile Include="App_Start\AppHost.cs" />
     <Compile Include="App_Start\WebServiceExamples.cs" />
+    <Compile Include="Config\ConfigurationManagerConfiguration.cs" />
+    <Compile Include="Config\IConfiguration.cs" />
+    <Compile Include="Config\WebConfig.cs" />
     <Compile Include="Controllers\BaseDocumentStoreController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SeasonController.cs" />
@@ -136,6 +139,7 @@
     <Compile Include="Services\PlayerService.cs" />
     <Compile Include="Services\SeasonService.cs" />
     <Compile Include="Services\TodoService.cs" />
+    <Compile Include="Testability\AppHost.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\js\ss-validation.js" />
@@ -254,6 +258,10 @@
       <Project>{BCD10A15-1543-4074-9FF5-0FD7C1AF46E8}</Project>
       <Name>Tipset.Api.Dto</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Tipset.Common\Tipset.Common.csproj">
+      <Project>{51B77784-1DB6-42A8-B7A1-2CF0A32890D3}</Project>
+      <Name>Tipset.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Tipset.Domain\Tipset.Domain.csproj">
       <Project>{845930A7-0F83-44FC-8947-4AB4F941EDF8}</Project>
       <Name>Tipset.Domain</Name>
@@ -275,7 +283,7 @@
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
+          <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>60667</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>

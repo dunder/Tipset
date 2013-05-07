@@ -10,12 +10,11 @@ namespace RavenDb.Services
     {
         public IDocumentStore DocumentStore { get; set; }
 
-        public object Put(NewPlayerRequest player)
+        public object Post(NewPlayerRequest player)
         {
             using (var session = DocumentStore.OpenSession())
             {
                 var entity = player.TranslateTo<Player>();
-                entity.Id = "players/" + player.Id;
 
                 session.Store(entity);
                 session.SaveChanges();

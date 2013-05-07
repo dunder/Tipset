@@ -12,6 +12,7 @@ namespace Tipset.AdminConsole.IoC
             Bind<ICommandFactory>().ToFactory(() => new UseFirstArgumentAsNameInstanceProvider());
 
             Bind<ICommand>().To<CreateSeasonCommand>().Named("create-season");
+            Bind<ICommand>().To<CreatePlayerCommand>().Named("create-player");
         }
     }
 }

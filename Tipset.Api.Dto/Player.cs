@@ -2,10 +2,9 @@
 
 namespace Tipset.Api.Dto
 {
-    [Route("/players/{Id}", "PUT")]
+    [Route("/players", "POST")]
     public class NewPlayerRequest : IReturn<NewPlayerResponse>
     {
-        public long Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
     }

@@ -5,6 +5,33 @@ namespace Tipset.Domain
 {
     public class SeasonFactory : ISeasonFactory
     {
+        public SeasonFactory()
+        {
+            
+        }
+
+        public SeasonFactory(IRoundDistribution roundDistribution, IPlayerAllocator playerAllocator)
+        {
+            RoundDistribution = roundDistribution;
+            PlayerAllocator = playerAllocator;
+        }
+
+        public IRoundDistribution RoundDistribution { get; private set; }
+        public IPlayerAllocator PlayerAllocator { get; private set; }
+
+        public Season CreateWithDistribution(string name, DateTime start, DateTime end, IList<Player> players)
+        {
+            var season = new Season
+                         {
+                             Name = name,
+                             Rounds = RoundDistribution.Distribute(start, end),
+                         };
+
+            PlayerAllocator.Allocate(players, season.Rounds);
+
+            return season;
+        }
+
         public Season Create(string name, DateTime start, DateTime end, IList<Player> players)
         {
             var currentRound = start;
